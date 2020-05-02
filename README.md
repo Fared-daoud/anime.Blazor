@@ -17,7 +17,7 @@ Before you can start creating an animation, you have to add some static assets t
 In your `_Host.cshtml` (server-side) or in your `index.html` (client-side) add the following lines to the `body` tag **after** the `_framework` reference
 
 ```html
-<!-- Reference the included moment.js javascript file. -->
+<!-- Reference the animeBlazor.js javascript file. -->
 <script src="_content/anime.Blazor/animeBlazor.js"></script>
 ```
 
