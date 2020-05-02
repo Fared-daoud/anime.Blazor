@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2914EE96-9ABD-45AF-B37D-BAC33DD6F7A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{30D18A5B-5963-4842-84EE-D5F03DCFCEE9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "anime.Blazor", "src\anime.Blazor\anime.Blazor.csproj", "{38F3052D-C1ED-40E2-A721-67028ED961D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pipeline", "pipeline", "{11DF53C9-3D48-4622-88BA-DB0AB7FEB314}"
+	ProjectSection(SolutionItems) = preProject
+		azure-pipelines.yml = azure-pipelines.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38F3052D-C1ED-40E2-A721-67028ED961D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38F3052D-C1ED-40E2-A721-67028ED961D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38F3052D-C1ED-40E2-A721-67028ED961D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38F3052D-C1ED-40E2-A721-67028ED961D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{38F3052D-C1ED-40E2-A721-67028ED961D5} = {2914EE96-9ABD-45AF-B37D-BAC33DD6F7A0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {434E2FEC-D03C-4BDD-977F-F492B65E422E}
+	EndGlobalSection
+EndGlobal
