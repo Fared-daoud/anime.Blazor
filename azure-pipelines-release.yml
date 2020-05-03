@@ -1,5 +1,5 @@
 trigger:
-- master
+- release
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -40,7 +40,7 @@ steps:
 #    Otherwise, PRs would be able to push new packages even without being merged.
 - task: NuGetCommand@2
   displayName: 'Publish to nuget.org'
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/release'))
   inputs:
     command: push
     packagesToPush: 'src/anime.Blazor/bin/$(buildConfiguration)/*.nupkg'

@@ -1,23 +1,22 @@
-# ASP.NET
-# Build and test ASP.NET projects.
-# Add steps that publish symbols, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
-
 trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
 
 steps:
-- task: DotNetCoreCLI@2
-  displayName: Build
+# Specify a particular version of the .NET SDK
+- task: UseDotNet@2
+  displayName: 'Use .NET Core sdk'
   inputs:
-    command: 'build'
-    projects: '**/*.csproj'
+    packageType: sdk
+    version: 3.1.100
+    installationPath: $(Agent.ToolsDirectory)/dotnet
 
-- task: DotNetCoreCLI@2
-  displayName: Pack
-  inputs:
-    command: 'pack'
-    packagesToPack: 'Github_Azure_Nuget/*.csproj'
+# Build the solution. Not strictly required to create the package,
+# but we want the build to fail if any sample can't build.
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'

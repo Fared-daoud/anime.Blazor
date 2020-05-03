@@ -3,7 +3,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>0.9.1</Version>
+    <Version>0.9.3</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>This is a Blazor library that wraps animejs.</Description>
     <Authors>Fared Daoud</Authors>

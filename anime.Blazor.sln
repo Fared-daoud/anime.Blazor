@@ -11,7 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "anime.Blazor", "src\anime.B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pipeline", "pipeline", "{11DF53C9-3D48-4622-88BA-DB0AB7FEB314}"
 	ProjectSection(SolutionItems) = preProject
-		azure-pipelines.yml = azure-pipelines.yml
+		azure-pipelines-master.yml = azure-pipelines-master.yml
+		azure-pipelines-release.yml = azure-pipelines-release.yml
 	EndProjectSection
 EndProject
 Global
