@@ -27,7 +27,7 @@ steps:
   displayName: 'dotnet pack'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'anime.Blazor/artifacts'
+    PathtoPublish: 'src/anime.Blazor/bin/$(buildConfiguration)'
     ArtifactName: 'artifacts'
     publishLocation: 'Container'
 
@@ -43,6 +43,6 @@ steps:
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   inputs:
     command: push
-    packagesToPush: 'anime.Blazor/artifacts/*.nupkg'
+    packagesToPush: 'src/anime.Blazor/bin/$(buildConfiguration)/*.nupkg'
     nuGetFeedType: external
     publishFeedCredentials: 'anime.Blazor'
