@@ -10,8 +10,16 @@
   /// </summary>
   public class Animation
   {
-    private int _id;
+    /// <summary>
+    /// instance Id
+    /// </summary>
+    private readonly int _id;
 
+
+    /// <summary>
+    /// Create new instance of <see cref="Animation"/>
+    /// </summary>
+    /// <param name="id">instance Id, should be unique in the app</param>
     public Animation(int id)
     {
       _id = id;
@@ -23,6 +31,9 @@
     public object[] Targets { get; set; }
 
 
+    /// <summary>
+    /// Gets or sets a value indicating wether an animation should autoplay
+    /// </summary>
     public bool Autoplay { get; set; } = true;
 
 
@@ -87,6 +98,7 @@
     /// Reverses the direction of an animation.
     /// </summary>
     /// <param name="jSRuntime">dito</param>
+    /// <param name="targets">targets to remove</param>
     public async ValueTask RemoveAsync(IJSRuntime jSRuntime, string targets)
     {
       await jSRuntime.InvokeVoidAsync("animeBlazor.remove", targets);

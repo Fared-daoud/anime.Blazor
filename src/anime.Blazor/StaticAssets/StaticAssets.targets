@@ -10,7 +10,7 @@
           Inputs="$(MSBuildThisFileDirectory)package-lock.json"
           Outputs="$(BaseIntermediateOutputPath)package-lock.json">
     <Message Importance="high" Text="Running npm install..." />
-    <Exec Command="npm install" WorkingDirectory="$(MSBuildThisFileDirectory)" />
+    <Exec Command="npm install" WorkingDirectory="$(MSBuildThisFileDirectory)" Condition="!Exists('StaticAssets\node_modules')" />
     <Copy SourceFiles="$(MSBuildThisFileDirectory)package-lock.json"
           DestinationFolder="$(BaseIntermediateOutputPath)" />
   </Target>
