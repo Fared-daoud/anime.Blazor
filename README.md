@@ -39,3 +39,38 @@ Now add a reference to `anime.Blazor` in your `_Imports.razor`
 ```csharp
 @using anime.Blazor;
 ```
+
+### Usage example
+
+```csharp
+// Create an instance of `Animation` class with a unique Id
+Animation animation = new Animation(1);
+
+// specifies the targets to animate
+animation.Targets = new object[] { ".any-css-selector .el1" };
+
+// specifies the parameters, for more info see the original documintation
+// of animejs library
+animation.AdditionalParameters = new Dictionary<string, object>
+{
+  { "translateX", 250 },
+  { "loop", true },
+  { "delay", 500 },
+  { "backgroundColor", "#4266f5"},
+};
+
+// then call AnimateAsync with an instance of `Microsoft.JSInterop.IJSRuntime` to start the animation
+await animation.AnimateAsync(JSRuntime);
+
+// if the Autoplay was set to false you can call `PlayAsync` to atart the animation
+await animation.PlayAsync(JSRuntime);
+
+// to pause an animation call `PauseAsync`
+await animation.PauseAsync(JSRuntime);
+
+// to reverse an animation call `ReverseAsync`
+await animation.ReverseAsync(JSRuntime);
+
+// to remove a target from an animation call `RemoveAsync`
+await animation.RemoveAsync(JSRuntime, ".any-css-selector .el");
+```
