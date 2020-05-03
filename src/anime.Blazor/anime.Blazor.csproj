@@ -2,18 +2,18 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>0.9.3</Version>
+    <Version>0.9.4</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>This is a Blazor library that wraps animejs.</Description>
     <Authors>Fared Daoud</Authors>
     <PackageTags>animejs anime animation Blazor ASP.Net Core wasm</PackageTags>
+    <IncludeContentInPack>false</IncludeContentInPack>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>.\anime.Blazor.xml</DocumentationFile>
+    <DocumentationFile>.\bin\Debug\netstandard2.0\anime.Blazor.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>.\anime.Blazor.xml</DocumentationFile>
+    <DocumentationFile>.\bin\Release\netstandard2.0\anime.Blazor.xml</DocumentationFile>
   </PropertyGroup>
 
 
@@ -23,6 +23,19 @@
     <TsSourceFiles Include="StaticAssets\*.ts; StaticAssets\*.json; StaticAssets\*.js" />
     <UpToDateCheckInput Include="@(TsSourceFiles)" />
     <UpToDateCheckOutput Include="wwwroot\animeBlazor.js" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Update="StaticAssets\package-lock.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Update="StaticAssets\package.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Update="StaticAssets\tsconfig.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <Target Name="NpmBuild" BeforeTargets="CoreBuild" Inputs="@(TsSourceFiles)" Outputs="wwwroot\animeBlazor.js">
