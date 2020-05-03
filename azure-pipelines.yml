@@ -19,12 +19,11 @@ steps:
 # Build the solution. Not strictly required to create the package,
 # but we want the build to fail if any sample can't build.
 - script: dotnet build --configuration $(buildConfiguration)
-  workingDirectory: anime.Blazor
   displayName: 'dotnet build $(buildConfiguration)'
 
 # Actually creates the NuGet package file
 - script: dotnet pack --configuration $(buildConfiguration) /p:VersionSuffix=$(Build.BuildNumber)
-  workingDirectory: anime.Blazor/src/anime.Blazor
+  workingDirectory: src/anime.Blazor
   displayName: 'dotnet pack'
 - task: PublishBuildArtifacts@1
   inputs:
