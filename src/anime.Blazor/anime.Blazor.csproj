@@ -27,8 +27,7 @@
 
   <Target Name="NpmBuild" BeforeTargets="CoreBuild" Inputs="@(TsSourceFiles)" Outputs="wwwroot\animeBlazor.js">
     <Exec Command="npm install" WorkingDirectory="StaticAssets" Condition="!Exists('StaticAssets\node_modules')" />
-    <Exec Command="npm run build:development" WorkingDirectory="StaticAssets" Condition="'$(Configuration)' == 'Debug'" />
-    <Exec Command="npm run build:production" WorkingDirectory="StaticAssets" Condition="'$(Configuration)' != 'Debug'" />
+    <Exec Command="npm run build:$(Configuration)" WorkingDirectory="StaticAssets" />
   </Target>
 
 </Project>

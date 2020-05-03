@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "build:development": "webpack --mode development",
-    "build:production": "webpack --mode production"
+    "build:Debug": "webpack --mode development",
+    "build:Release": "webpack --mode production"
   },
   "devDependencies": {
     "animejs": "^3.2.0",
