@@ -2,8 +2,7 @@
 
 [![Build Status](https://dev.azure.com/faredjalel/anime.Blazor/_apis/build/status/anime.Blazor-master?branchName=master)](https://dev.azure.com/faredjalel/anime.Blazor/_build/latest?definitionId=2&branchName=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](/LICENSE.md)
-
-[![NuGet Downloads](https://img.shields.io/nuget/dt/anime.Blazor?label=NuGet%20Downloads)](https://www.nuget.org/packages/anime.Blazor/)
+[![NuGet](https://img.shields.io/nuget/v/anime.Blazor)](https://www.nuget.org/packages/anime.Blazor/)
 
 # Introduction
 
