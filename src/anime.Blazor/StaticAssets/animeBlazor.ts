@@ -22,10 +22,7 @@ let activeInstances: Animation[] = [];
 export default class animeBlazor {
 
   static animation(params: any, id: number) {
-    console.log("start animation");
     var inst = anime(params);
-    console.log(id);
-    console.log(inst);
     activeInstances.push(new Animation(id, inst));
   }
 

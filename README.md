@@ -2,8 +2,7 @@
 
 [![Build Status](https://dev.azure.com/faredjalel/anime.Blazor/_apis/build/status/anime.Blazor-master?branchName=master)](https://dev.azure.com/faredjalel/anime.Blazor/_build/latest?definitionId=2&branchName=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](/LICENSE.md)
-
-[![NuGet Downloads](https://img.shields.io/nuget/dt/anime.Blazor?label=NuGet%20Downloads)](https://www.nuget.org/packages/anime.Blazor/)
+[![NuGet](https://img.shields.io/nuget/v/anime.Blazor)](https://www.nuget.org/packages/anime.Blazor/)
 
 # Introduction
 
@@ -49,20 +48,26 @@ Animation animation = new Animation(1);
 // specifies the targets to animate
 animation.Targets = new object[] { ".any-css-selector .el1" };
 
-// specifies the parameters, for more info see the original documintation
-// of animejs library
+// sets the value for the needed the parameters,
+// through setting available properties, like:
+animation.Direction = Direction.reverse;
+animation.Autoplay = true;
+animation.Loop = 5;
+
+// or
 animation.AdditionalParameters = new Dictionary<string, object>
 {
   { "translateX", 250 },
-  { "loop", true },
   { "delay", 500 },
   { "backgroundColor", "#4266f5"},
 };
 
+//for more info about the parameters see the original documintation of animejs library
+
 // then call AnimateAsync with an instance of `Microsoft.JSInterop.IJSRuntime` to start the animation
 await animation.AnimateAsync(JSRuntime);
 
-// if the Autoplay was set to false you can call `PlayAsync` to atart the animation
+// if the Autoplay was set to false you can call `PlayAsync` to start the animation
 await animation.PlayAsync(JSRuntime);
 
 // to pause an animation call `PauseAsync`

@@ -2,12 +2,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <Version>0.9.4</Version>
+    <Version>0.9.6</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>This is a Blazor library that wraps animejs.</Description>
     <Authors>Fared Daoud</Authors>
-    <PackageTags>animejs anime animation Blazor ASP.Net Core wasm</PackageTags>
+    <PackageTags>animejs anime animation Blazor ASP.Net.Core wasm JSInterop</PackageTags>
     <IncludeContentInPack>false</IncludeContentInPack>
+    <RepositoryUrl>https://github.com/Fared-daoud/anime.Blazor</RepositoryUrl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>.\bin\Debug\netstandard2.0\anime.Blazor.xml</DocumentationFile>
@@ -27,6 +28,10 @@
 
 
   <ItemGroup>
+    <Content Include="..\..\README.md" Link="README.md">
+      <Pack>true</Pack>
+      <PackagePath>\</PackagePath>
+    </Content>
     <Content Update="StaticAssets\package-lock.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>

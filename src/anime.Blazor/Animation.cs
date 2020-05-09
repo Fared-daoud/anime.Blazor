@@ -17,6 +17,36 @@
 
 
     /// <summary>
+    /// autoplay
+    /// </summary>
+    private bool _autoplay = true;
+
+    
+    /// <summary>
+    /// direction
+    /// </summary>
+    private Direction _direction;
+
+
+    /// <summary>
+    /// loop
+    /// </summary>
+    private int _loop;
+
+
+    /// <summary>
+    /// loopIndefinitely
+    /// </summary>
+    private bool _loopIndefinitely;
+
+
+    /// <summary>
+    /// parameters
+    /// </summary>
+    private readonly Dictionary<string, object> _parameters = new Dictionary<string, object>();
+
+
+    /// <summary>
     /// Create new instance of <see cref="Animation"/>
     /// </summary>
     /// <param name="id">instance Id, should be unique in the app</param>
@@ -34,13 +64,65 @@
     /// <summary>
     /// Gets or sets a value indicating wether an animation should autoplay
     /// </summary>
-    public bool Autoplay { get; set; } = true;
+    public bool Autoplay
+    {
+      get => _autoplay;
+      set
+      {
+        _autoplay = value;
+        _parameters["autoplay"] = _autoplay;
+      }
+    }
+
+
+    /// <summary>
+    /// Gets or sets direction of the animation.
+    /// </summary>
+    public Direction Direction
+    {
+      get => _direction;
+      set
+      {
+        _direction = value;
+        _parameters["direction"] = _direction.ToString();
+      }
+    }
+
+
+    /// <summary>
+    /// Gets or sets the number of iterations of your animation.
+    /// </summary>
+    public int Loop
+    {
+      get => _loop;
+      set
+      {
+        _loop = value;
+        _parameters["loop"] = _loop;
+      }
+    }
+
+
+    /// <summary>
+    /// Gets or sets a value indicating wether the animation should loop indefinitely
+    /// </summary>
+    public bool LoopIndefinitely
+    {
+      get => _loopIndefinitely;
+      set
+      {
+        _loopIndefinitely = value;
+        _parameters["loop"] = _loopIndefinitely;
+      }
+    }
+
 
 
     /// <summary>
     /// Gets or sets a dictionary of the animation parameters
     /// </summary>
-    public Dictionary<string, object> AdditionalParameters { get; set; } = new Dictionary<string, object>();
+    public Dictionary<string, object> AdditionalParameters { get; set; }
+      = new Dictionary<string, object>();
 
 
     /// <summary>
@@ -107,16 +189,14 @@
 
     private Dictionary<string, object> ToDictonary()
     {
-      Dictionary<string, object> result = new Dictionary<string, object>();
-      result.Add("targets", Targets);
-      result.Add("autoplay", Autoplay);
+      _parameters["targets"] = Targets;
 
       foreach (var item in AdditionalParameters)
       {
-        result.Add(item.Key, item.Value);
+        _parameters.Add(item.Key, item.Value);
       }
 
-      return result;
+      return _parameters;
     }
   }
 }
